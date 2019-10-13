@@ -2,11 +2,12 @@ function ConvertFrom-Color {
     [alias('Convert-FromColor')]
     [CmdletBinding()]
     param (
-        [alias('Colors')][RGBColors[]] $Color,
+        [ValidateScript({$_ -in $Global:RGBColors.Keys})]
+        [alias('Colors')][string[]] $Color,
         [switch] $AsDecimal
     )
     $Colors = foreach ($C in $Color) {
-        $Value = $Script:RGBColors."$C"
+        $Value = $Global:RGBColors."$C"
         if ($null -eq $Value) {
             return
         }

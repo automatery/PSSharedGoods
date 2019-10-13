@@ -1,0 +1,1 @@
+Register-ArgumentCompleter -CommandName ConvertFrom-Color -ParameterName Color -ScriptBlock {$Global:RGBColors.Keys}

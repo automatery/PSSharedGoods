@@ -1,4 +1,4 @@
-$Script:RGBColors = @{
+$Global:RGBColors = @{
     "None"                 = $null
     "Black"                = 0, 0, 0
     "Navy"                 = 0, 0, 128
